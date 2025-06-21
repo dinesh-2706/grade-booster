@@ -1,0 +1,141 @@
+:root {
+  --bg-light: #f0f2f5;
+  --card-light: #ffffff;
+  --text-light: #000000;
+  --bg-dark: #121212;
+  --card-dark: #1e1e1e;
+  --text-dark: #ffffff;
+  --primary: #0d47a1;
+  --secondary: #2e7d32;
+  --accent: #90caf9;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease-in-out;
+}
+
+body.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+h2 {
+  text-align: center;
+  color: var(--primary);
+}
+
+.card {
+  background: var(--card-light);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
+body.dark-mode .card {
+  background: var(--card-dark);
+}
+
+.section-title {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode button {
+  background: #2c2c2c;
+  color: white;
+  border: 1px solid #555;
+}
+
+.flex-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.flex-row > div {
+  flex: 1;
+  min-width: 180px;
+}
+
+.button-add {
+  background: var(--primary);
+  color: white;
+  margin-top: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-calc {
+  background: var(--secondary);
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.results {
+  overflow-x: auto;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f4f8ff;
+  color: #003366;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #e0f0ff;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 15px 0;
+}
+
+.toggle-theme {
+  text-align: center;
+  margin-top: 10px;
+}

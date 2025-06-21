@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIT-AP Grade Booster</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <h2>🎓 VIT-AP Grade Booster</h2>
+
+  <div class="toggle-theme">
+    <label>
+      <input type="checkbox" id="themeToggle" onclick="toggleTheme()"> Toggle Dark Mode
+    </label>
+  </div>
+
+  <div class="card">
+    <div class="section-title">📘 Course Details</div>
+    <label for="courseType">Course Type:</label>
+    <select id="courseType">
+      <option value="theory">Theory</option>
+      <option value="theory+lab">Theory + Lab</option>
+      <option value="theory+project">Theory + Project</option>
+    </select>
+    <div id="labSection" style="display: none;">
+      <label for="labMarks">Lab/Project Marks (out of 100):</label>
+      <input type="number" id="labMarks" min="0" max="100" placeholder="Enter lab/project marks">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title">📝 Internal Components</div>
+    <div id="components"></div>
+    <button class="button-add" onclick="addComponent()">➕ Add Component</button>
+  </div>
+
+  <div class="card">
+    <div class="section-title">🏁 Grade Cutoffs</div>
+    <div id="cutoffs"></div>
+    <button class="button-add" onclick="addCutoff()">➕ Add Grade Cutoff</button>
+  </div>
+
+  <div class="card">
+    <button class="button-calc" onclick="calculate()">🚀 Calculate Grade</button>
+    <div class="results" id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
