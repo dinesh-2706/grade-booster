@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Prevent Clickjacking -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <!-- Prevent MIME Type Sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <!-- Enforce Secure Connections -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-ancestors 'none'; upgrade-insecure-requests;" />
+    <!-- Prevent XSS in Older Browsers -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIT-AP Grade Booster</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="container my-3 py-2 py-md-3 px-4 title border rounded shadow-sm">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <img src="images/GB1.png" class="rounded-circle img-fluid" alt="Profile" width="80"
+                                height="80" />
+                        </div>
+                        <div class="col text-center">
+                            <h1 class="mb-1">VIT-AP Grade Booster</h1>
+                            <p class="mb-0 small fst-italic quote">Know the Marks You Need, Reach the Grade You
+                                Deserve</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs + Toggle -->
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Tabs + Switch -->
+                <div class="col-12 col-md-2 order-1 order-md-2 pt-md-4 align-items-center">
+                    <div class="row bg-sm text-dark mb-2 rounded">
+                        <div class="col col-xs-4 order-2 order-md-1 pt-2">
+                            <div class="form-check form-switch float-end">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Switch Theme</label>
+                            </div>
+                        </div>
+                        <div class="col col-xs-8 col-md-9 offset-md-2 mt-md-4 order-1 order-md-2">
+                            <ul class="nav nav-tabs justify-content-start flex-sm-row flex-md-column w-100"
+                                role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#userGuide" role="tab">User Guide</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#main" role="tab"
+                                        aria-current="page">Main</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content Area -->
+                <div class="col-12 col-md-8 offset-md-1 order-2 order-md-1">
+                    <div class="tab-content">
+                        <!-- Main Tab -->
+                        <div class="tab-pane fade show active" id="main" role="tabpanel">
+                            <div class="overflow-auto custom-scrollbar" style="max-height: 79vh;">
+                                <form id="gradeForm" class="needs-validation" novalidate>
+                                    <div class="card text-start p-2">
+                                        <div class="card-body">
+                                            <h4 class="card-title">SEMESTER</h4>
+                                            <div class="mt-3">
+                                                <select class="form-select form-select-lg" name="semester" id="semester"
+                                                    required>
+                                                    <option selected>Select Semester</option>
+                                                    <option value="regular">Regular (Fall/Win)</option>
+                                                    <option value="long">Long Summer</option>
+                                                    <option value="short">Short Summer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--EXTERNALS-->
+                                    <div class="card text-start p-2" style="display: none;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">EXTERNALS</h4>
+                                            <div class="row g-3 mt-3">
+                                                <div class="col-md-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" class="form-control" min="0" max="50"
+                                                            step="any" id="cat1-regular" placeholder="CAT-1" required>
+                                                        <label for="cat-1">CAT-1</label>
+                                                        <div class="invalid-feedback">Please enter valid CAT-1 marks
+                                                            (0–50).</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" class="form-control" min="0" max="50"
+                                                            step="any" id="cat2-regular" placeholder="CAT-2" required>
+                                                        <label for="cat-2">CAT-2</label>
+                                                        <div class="invalid-feedback">Please enter valid CAT-2 marks
+                                                            (0–50).</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" class="form-control" min="0" max="100"
+                                                            step="any" id="fat-regular" placeholder="FAT" required>
+                                                        <label for="fat">FAT</label>
+                                                        <div class="invalid-feedback">Please enter valid FAT marks
+                                                            (0–100).</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card text-start p-2" style="display: none;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">EXTERNALS</h4>
+                                            <div class="row g-3 mt-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" class="form-control" min="0" max="50"
+                                                            step="any" id="cat-long" placeholder="CAT" required>
+                                                        <label for="cat">CAT</label>
+                                                        <div class="invalid-feedback">Please enter valid CAT marks
+                                                            (0–50).</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" class="form-control" min="0" max="100"
+                                                            step="any" id="fat-long" placeholder="FAT" required>
+                                                        <label for="fat">FAT</label>
+                                                        <div class="invalid-feedback">Please enter valid FAT marks
+                                                            (0–100).</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card text-start p-2" style="display: none;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">EXTERNALS</h4>
+                                            <div class="mt-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" min="0" max="100"
+                                                        step="any" id="fat-short" placeholder="FAT" required>
+                                                    <label for="fat">FAT</label>
+                                                    <div class="invalid-feedback">Please enter valid FAT marks (0–100).
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--COURSE TYPE-->
+                                    <div class="card text-start p-2">
+                                        <div class="card-body">
+                                            <h4 class="card-title">COURSE TYPE</h4>
+                                            <div class="mt-3">
+                                                <select class="form-select form-select-lg" name="courseType"
+                                                    id="courseType" required>
+                                                    <option selected>Select Course Type</option>
+                                                    <option value="theory">Theory</option>
+                                                    <option value="theolab">Theory + Lab</option>
+                                                    <option value="theopro">Theory + Project</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card text-start p-2" style="display: none;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">LAB COMPONENT</h4>
+                                            <div class="mt-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" min="0" max="100"
+                                                        step="any" id="labMarks" placeholder="Lab Marks" required>
+                                                    <label for="labMarks">LAB Marks</label>
+                                                    <div class="invalid-feedback">Please enter valid LAB marks (0–100).
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card text-start p-2" style="display: none;">
+                                        <div class="card-body">
+                                            <h4 class="card-title">PROJECT COMPONENT</h4>
+                                            <div class="mt-3">
+                                                <div class="form-floating mb-3">
+                                                    <input type="number" class="form-control" min="0" max="100"
+                                                        step="any" id="projectMarks" placeholder="Project Marks"
+                                                        required>
+                                                    <label for="projectMarks">Project Marks</label>
+                                                    <div class="invalid-feedback">Please enter valid Project marks
+                                                        (0–100).
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--INTERNALS-->
+                                    <div class="card text-start p-2">
+                                        <div class="card-body">
+                                            <h4 class="card-title">INTERNALS</h4>
+                                            <div id="internalComponents" class="mt-3"></div>
+                                            <button type="button" class="button" id="addComponentBtn">Add
+                                                Component</button>
+                                        </div>
+                                    </div>
+                                    <!--GRADE CUTOFFS-->
+                                    <div class=" card text-start p-2">
+                                        <div class="card-body">
+                                            <h4 class="card-title">GRADE CUT-OFFS</h4>
+                                            <div class="row g-3 mt-3">
+                                                <div class="col">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="number" class="form-control" step="any"
+                                                            id="requiredGradeCutoff" placeholder="Required Weightage"
+                                                            required>
+                                                        <label for="requiredWeightage">Cutoff weightage of
+                                                            Required
+                                                            Grade</label>
+                                                        <div class="invalid-feedback">Please enter valid
+                                                            weightage
+                                                            (0–100%).</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card text-start p-2">
+                                        <div class="card-body">
+                                            <h4 class="card-title">CALCULATE REQUIRED MARKS</h4>
+                                            <button type="submit" class="button">Calculate Marks
+                                                Required</button>
+                                        </div>
+                                        <div class="results mx-3" id="output">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- User Guide Tab -->
+                        <div class="tab-pane fade" id="userGuide" role="tabpanel">
+                            <div class="overflow-auto custom-scrollbar" style="max-height: 79vh;">
+                                <div class="card text-start">
+                                    <div class="card-body">
+                                        <h2 class="card-title text-center mb-4">VIT-AP Grade Booster - User Guide</h2>
+                                        <p>
+                                            The <strong>VIT-AP Grade Booster</strong> helps you calculate the required
+                                            marks to achieve a
+                                            target grade based on your current academic performance.
+                                        </p>
+                                        <h5 class="mt-4">🧭 Purpose of the Application</h5>
+                                        <ul>
+                                            <li>Know how many marks you need in FAT to get your deserved grade.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card text-start">
+                                    <div class="card-body">
+                                        <h3 class="mx-5 text-info">📝 Step-by-Step Instructions</h3>
+                                        <h6 class="mt-3">1️⃣ Select the Semester</h6>
+                                        <ul>
+                                            <li>Regular (Fall/Winter)</li>
+                                            <li>Long Summer</li>
+                                            <li>Short Summer</li>
+                                        </ul>
+                                        <h6 class="mt-3">2️⃣ Enter External Components</h6>
+                                        <ul>
+                                            <li>Regular: CAT-1, CAT-2, FAT</li>
+                                            <li>Long: CAT and FAT</li>
+                                            <li>Short Summer: only FAT</li>
+                                        </ul>
+                                        <h6 class="mt-3">3️⃣ Choose the Course Type</h6>
+                                        <ul>
+                                            <li>Theory</li>
+                                            <li>Theory + Lab</li>
+                                            <li>Theory + Project</li>
+                                        </ul>
+                                        <h6 class="mt-3">4️⃣ Add Internal Components</h6>
+                                        <ul>
+                                            <li>Click “Add Component” and enter details like Quizzes, Assignments, etc.
+                                            </li>
+                                        </ul>
+                                        <h6 class="mt-3">5️⃣ Enter Lab or Project Marks (If Applicable)</h6>
+                                        <p>If your course includes labs or projects, enter marks out of 100 in the
+                                            provided fields.</p>
+                                        <h6 class="mt-3">6️⃣ Provide Grade Cutoffs</h6>
+                                        <ul>
+                                            <li>Enter the cutoff for your <strong>desired grade</strong> (e.g., A → 75)
+                                            </li>
+                                        </ul>
+                                        <h6 class="mt-3">7️⃣ Calculate Your Required Marks</h6>
+                                        <ul>
+                                            <li>Click on <strong>“Calculate Marks Required”</strong> to view remaining
+                                                marks needed in FAT</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card text-start">
+                                    <div class="card-body">
+                                        <h5 class="mt-4">💡 Tip</h5>
+                                        <ul>
+                                            <li>Use accurate marks and cutoffs from your VTOP.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
